@@ -1,7 +1,7 @@
 # Restaurant Ordering App
 <b>Using this app, you can order your preferred meals.</b>
 
-![Restaurant-Order-GIF](Restaurant-Order.gif))
+![Restaurant-Order-GIF](Restaurant-Order.gif)
 
 ## Strech Goals
 There are some strech goals for improvement for this project:
