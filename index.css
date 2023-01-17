@@ -1,0 +1,207 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Smythe", cursive;
+}
+
+body {
+  margin-bottom: 50px;
+}
+
+header {
+  background-image: url(images/ferks-guare-KEZdWfYD-ow-unsplash.jpg);
+  background-size: cover;
+  background-position: 0 50%;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0 auto;
+  padding: 5% 0 5% 8%;
+  color: white;
+}
+
+h1 {
+  margin: 0 0 5px 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* MEAL SECTION */
+
+.list {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 45px auto;
+}
+
+.meal {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-sizing: border-box;
+  width: max-content;
+}
+
+.meal span {
+  width: 65px;
+  height: 65px;
+  font-size: 50px;
+}
+
+.meal-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 1.75rem;
+}
+
+.ingredient {
+  color: #8b8b8b;
+  font-size: 1rem;
+}
+
+.div-add-btn {
+  width: min-content;
+}
+
+.add-btn .fa-solid {
+  padding: 10px;
+  border: 1px solid #dedede;
+  border-radius: 50%;
+  color: hsla(0, 0%, 23%, 1);
+  cursor: pointer;
+}
+
+hr {
+  margin-bottom: 10px;
+  border: 1px solid #d2d2d2;
+}
+
+/* PRE-CHECKOUT SECTION */
+
+#pre-checkout-section {
+  display: none;
+  margin-top: 45px;
+  font-size: 1.75rem;
+}
+
+#pre-checkout-section h3 {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: inherit;
+}
+
+.pre-checkout-detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 20px;
+}
+
+.remove-btn {
+  margin-left: 10px;
+  font-size: 0.75rem;
+  background: none;
+  border: none;
+  color: #bbbbbb;
+  font-family: Verdana;
+  cursor: pointer;
+}
+
+#pre-checkout-section hr {
+  color: #393333;
+  border: 2px solid hsla(360, 6%, 21%, 0.5);
+  margin-bottom: 15px;
+}
+
+.price {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.complete-order-btn {
+  width: 100%;
+  height: 60px;
+  margin: 50px auto;
+  padding: 15px;
+  color: #ffffff;
+  font-family: Verdana;
+  font-size: 1rem;
+  font-weight: bold;
+  background: #16db99;
+  border-radius: 3px;
+  border: none;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+}
+
+/* CHECKOUT PAYMENT MODAL STATE */
+
+.modal {
+  display: none;
+  width: 300px;
+  height: max-content;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 4px;
+  filter: drop-shadow(5.18654px 5.18654px 255.437px rgba(0, 0, 0, 0.5));
+  font-family: "Verdana";
+}
+
+.modal h2 {
+  margin: 20px 0;
+  font-family: "Verdana";
+  font-size: 1rem;
+  text-align: center;
+}
+
+form {
+  margin: 0;
+}
+
+input[type="text"],
+.pay-btn {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 15px 20px;
+  margin: 10px 0;
+  border: 1px solid hsla(0, 0%, 46%, 1);
+  border-radius: 4px;
+  font-family: "Verdana";
+}
+
+.pay-btn {
+  background: #16db99;
+  border: none;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+  color: white;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+/* ORDER COMPLETE STATE */
+
+.order-complete {
+  display: none;
+  margin: 45px 0;
+  padding: 30px;
+  background: #ecfdf5;
+  border-radius: 3px;
+  color: hsla(163, 88%, 20%, 1);
+  font-size: 1.4rem;
+  text-align: center;
+}
