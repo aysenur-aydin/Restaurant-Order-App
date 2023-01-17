@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <link rel="stylesheet" href="index.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Smythe&display=swap" rel="stylesheet">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Restaurant Order</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>Jimmy's Diner</h1>
+        <h3>The best burgers and pizzas in town.</h3>
+    </header>
+
+    <div class="container">
+
+        <!-- MEAL SECTION -->
+
+        <main id="meal-section">
+            <!-- meal list comes here -->
+        </main>
+
+        <!-- PRE-CHECKOUT-STATE -->
+
+        <div id="pre-checkout-section">
+            <h3>Your order</h3>
+            <div id="pre-checkout" class="pre-checkout">
+                <div id="pre-checkout-items" class="pre-checkout-items">
+                    <!-- added meals come here -->
+                </div>
+            </div>
+            <hr>
+            <div>
+                <div class="pre-checkout-detail">
+                    <p>Total Price:</p>
+                    <p id="total-price" class="price"></p>
+                </div>
+                <button id="complete-btn" class="complete-order-btn">Complete order</button>
+            </div>
+        </div>
+
+        <!-- ORDER-COMPLETE-STATE -->
+
+        <div id="order-complete" class="order-complete">
+            <p>Thanks, <span id="client-name"></span>! Your order is on its way!</p>
+        </div>
+
+    </div>
+
+    <!-- CHECKOUT-PAYMENT-MODAL-STATE -->
+
+    <div id="modal" class="modal">
+        <h2>Enter card details</h2>
+        <form>
+            <input id="client-name" type="text" name="client-name" placeholder="Enter your name" required>
+            <input type="text" name="card-name" placeholder="Enter card name" required>
+            <input type="text" name="card-cvv" placeholder="Enter CVV" required>
+            <button id="pay-btn" type="button" class="pay-btn">Pay</button>
+        </form>
+    </div>
+
+    <script src="index.js" type="module"></script>
+</body>
+
+</html>
