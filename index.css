@@ -8,6 +8,10 @@ body {
   margin-bottom: 50px;
 }
 
+.bold {
+  font-weight: bold;
+}
+
 header {
   background-image: url(images/ferks-guare-KEZdWfYD-ow-unsplash.jpg);
   background-size: cover;
@@ -101,6 +105,7 @@ hr {
 
 .pre-checkout-detail {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: baseline;
   margin-bottom: 20px;
@@ -122,9 +127,15 @@ hr {
   margin-bottom: 15px;
 }
 
-.price {
+.item-price-section {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
   font-size: 1.25rem;
-  font-weight: bold;
+}
+
+.item-amount {
+  font-size: 1rem;
 }
 
 .complete-order-btn {

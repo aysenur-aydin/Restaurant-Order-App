@@ -1,10 +1,11 @@
 import { menuArray } from './data.js'
-import { orderArray } from './data.js'
 
 const mealSection = document.getElementById('meal-section')
 const preCheckout = document.getElementById('pre-checkout-section')
 const modal = document.getElementById('modal')
 const orderComplete = document.getElementById('order-complete')
+
+const orderArray = []
 
 document.addEventListener('click', function(e){
     // ADD BUTTON CLICK
@@ -13,17 +14,16 @@ document.addEventListener('click', function(e){
         preCheckout.style.display = 'block'
 
         let alreadyAdded = addedMealObj(e.target.dataset.add)
+
+        alreadyAdded.amount++
         
-        if (orderArray.includes(alreadyAdded)){
+        if (!orderArray.includes(alreadyAdded)){
 
-            return alert("You have already add this item to cart")
+            orderArray.push(addedMealObj(e.target.dataset.add))
 
-        } else {
-            
-        orderArray.push(addedMealObj(e.target.dataset.add))
+        }
 
         renderPreCheckout()
-        }
 
     } 
     // REMOVE BUTTON CLICK
@@ -31,6 +31,8 @@ document.addEventListener('click', function(e){
         
         let removedMeal = removedMealObj(e.target.dataset.remove)
         
+        removedMeal.amount = 0
+
         let index = orderArray.indexOf(removedMeal)
 
         orderArray.splice(index, 1)
@@ -65,7 +67,7 @@ function getMealList() {
     
     let mealList = ``
 
-    menuArray.forEach(function(meal){
+    menuArray.forEach( meal => {
         
         let ingredientsArray = meal.ingredients
 
@@ -104,21 +106,24 @@ function renderPreCheckout() {
 
     let mealPrices = 0
 
-    orderArray.forEach(function(meal){
+    orderArray.forEach( item => {
 
         addedMealString += `
-        <div class="pre-checkout-detail"> 
-            <p>${meal.name} 
-                <button class="remove-btn" data-remove="${meal.id}">
-                    remove
-                </button>
-            </p>
-            <p class="price">
-                $${meal.price}
-            </p>
+        <div class="pre-checkout-detail">
+            <div>  
+                <p>${item.name} 
+                    <button class="remove-btn" data-remove="${item.id}">
+                        remove
+                    </button>
+                </p>
+            </div>
+            <div class="item-price-section">
+                <p class="item-amount">${item.amount}x</p>
+                <p class="bold">$${item.price * item.amount }</p>
+            </div>
         </div>
         `
-        mealPrices += meal.price
+        mealPrices += item.price * item.amount
     })
 
     preCheckoutItems.innerHTML = addedMealString
@@ -134,10 +139,8 @@ function renderPreCheckout() {
 
 function addedMealObj(mealId) {
 
-    const mealObj = menuArray.filter(function(meal){
-        return meal.id == mealId
-    })[0]
-    
+    const mealObj = menuArray.filter( meal => meal.id == mealId )[0]
+
     return mealObj
 }
 
@@ -145,9 +148,7 @@ function addedMealObj(mealId) {
 
 function removedMealObj(mealId) {
 
-    const mealObj = orderArray.filter(function(meal){
-        return meal.id == mealId
-    })[0]
+    const mealObj = orderArray.filter( meal => meal.id == mealId )[0]
 
     return mealObj
 }
