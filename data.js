@@ -1,25 +1,28 @@
-export const menuArray = [
+const menuArray = [
     {
         name: "Pizza",
+        emoji: "🍕",
         ingredients: ["pepperoni", "mushrom", "mozarella"],
-        id: 0,
         price: 14,
-        emoji: "🍕"
+        id: 0,
+        amount: 0
     },
     {
         name: "Hamburger",
+        emoji: "🍔",
         ingredients: ["beef", "cheese", "lettuce"],
         price: 12,
-        emoji: "🍔",
-        id: 1
+        id: 1,
+        amount: 0
     },
         {
         name: "Icetea",
-        ingredients: ["water, sugar, tea extracts, juices"],
-        price: 8,
         emoji: "🥤",
-        id: 2
+        ingredients: ["water", "sugar", "tea extracts", "juices"],
+        price: 8,
+        id: 2,
+        amount: 0
     }
 ]
 
-export const orderArray = []
+export { menuArray }
